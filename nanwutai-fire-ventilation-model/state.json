@@ -1,0 +1,31 @@
+{
+  "project": "nanwutai-fire-ventilation-model",
+  "mode": "compose",
+  "text_type": "research_model",
+  "language": "zh",
+  "target_reader": "研究者、导师及后续模型实施人员",
+  "current_round": 1,
+  "scores": [
+    {
+      "round": 1,
+      "stage": "foundation_and_model_skeleton",
+      "problem_clarity": 9,
+      "scientific_tension": 9,
+      "evidence_fit": 8,
+      "logic_chain": 9,
+      "method_feasibility": 7,
+      "novelty_specificity": 7,
+      "risk_boundaries": 9,
+      "language_quality": 8,
+      "mean": 8.25
+    }
+  ],
+  "technical_debts": [
+    "真实断面、纵坡和横通道缺失",
+    "Q1/Q2/Q3具体设计火灾参数缺失",
+    "五档共同纵向风速尚未由粗筛生成",
+    "中国现行适用ASET阈值尚未核定",
+    "未安装且未运行FDS/Pathfinder"
+  ],
+  "status": "revision"
+}
