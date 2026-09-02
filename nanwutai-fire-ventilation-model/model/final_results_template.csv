@@ -1,0 +1,2 @@
+case_id,fire_id,power_symbol,speed_id,speed_m_s,passage_id,passage_used,passage_usage_rate,backlayer_max_m,temperature_max_c,visibility_min_m,co_max_ppm,smoke_layer_min_m,aset_s,aset_censored,aset_controlling_criterion,rset_p95_s,margin_s,aset_rset_ratio,passes
+F1_V1,F1,Q1,V1,,CP01,,,,,,,,,,,,,,
