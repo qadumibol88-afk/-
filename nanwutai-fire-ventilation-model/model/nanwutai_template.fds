@@ -1,0 +1,31 @@
+! PARAMETRIC SKELETON ONLY - NOT VALIDATED BY FDS
+! Case: {{CASE_ID}}
+&HEAD CHID='{{CHID}}', TITLE='{{TITLE}}' /
+&TIME T_END={{T_END_S}} /
+&MISC TMPA={{AMBIENT_TEMPERATURE_C}} /
+&DUMP DT_DEVC=1.0, DT_SLCF=5.0 /
+
+! Meshes derived from the verified tunnel section and mesh study.
+{{MESH_BLOCKS}}
+
+! Fire-scenario-specific reaction, obstruction, burner and HRR ramp.
+{{FIRE_BLOCKS}}
+
+! Full fire bore, cross-passages and local safe-bore stubs.
+{{GEOMETRY_BLOCKS}}
+
+! Portal/open boundaries and the case longitudinal velocity condition.
+{{BOUNDARY_BLOCKS}}
+{{VELOCITY_BLOCKS}}
+
+! Three breathing-zone points, vertical arrays, layer-height devices and
+! ceiling backlayering probes at every verified cross-passage.
+{{DEVICE_BLOCKS}}
+
+! Core slices. Additional coupling output must be confirmed against the
+! installed FDS and Pathfinder versions before a production run.
+&SLCF PBZ={{BREATHING_HEIGHT_M}}, QUANTITY='TEMPERATURE' /
+&SLCF PBZ={{BREATHING_HEIGHT_M}}, QUANTITY='VISIBILITY', SPEC_ID='SOOT' /
+&SLCF PBZ={{BREATHING_HEIGHT_M}}, QUANTITY='VOLUME FRACTION', SPEC_ID='CARBON MONOXIDE' /
+
+&TAIL /
