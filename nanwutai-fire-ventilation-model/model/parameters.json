@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "project": "nanwutai-fire-ventilation-model",
+    "schema_version": "1.0.0",
+    "purpose": "南五台隧道中段火灾通风参数化FDS骨架",
+    "allowed_status": ["VERIFIED", "ASSUMED", "MISSING"],
+    "generation_policy": "所有required_for_generation参数必须非空且状态为VERIFIED",
+    "installation_allowed": false
+  },
+  "software": {
+    "fds_target_version": {
+      "value": "6.11.1",
+      "unit": "version",
+      "source": "NIST FDS-SMV manuals page; current local installation not verified",
+      "status": "ASSUMED",
+      "required_for_generation": false
+    }
+  },
+  "geometry": {
+    "selected_bore": {
+      "value": null,
+      "unit": "identifier",
+      "source": "待两洞纵坡、洞口条件和自然风压比较",
+      "status": "MISSING",
+      "required_for_generation": true
+    },
+    "length_m": {
+      "value": 2516.0,
+      "unit": "m",
+      "source": "长安大学公开实车试验论文，待竣工图复核",
+      "status": "ASSUMED",
+      "required_for_generation": true
+    },
+    "cross_section_yz_m": {
+      "value": null,
+      "unit": "[[m,m], ...]",
+      "source": "待竣工断面图",
+      "status": "MISSING",
+      "required_for_generation": true
+    },
+    "slope_profile_xz_m": {
+      "value": null,
+      "unit": "[[m,m], ...]",
+      "source": "待竣工纵断面",
+      "status": "MISSING",
+      "required_for_generation": true
+    },
+    "cross_passages": {
+      "value": null,
+      "unit": "list",
+      "source": "待横通道设施表与图纸",
+      "status": "MISSING",
+      "required_for_generation": true
+    },
+    "safe_bore_stub_length_m": {
+      "value": null,
+      "unit": "m",
+      "source": "待安全洞压力边界与局部敏感性研究",
+      "status": "MISSING",
+      "required_for_generation": true
+    }
+  },
+  "orientation": {
+    "x_axis": {
+      "value": "沿目标纵向风正方向，上游洞口为x=0",
+      "unit": "definition",
+      "source": "用户批准的模型计划",
+      "status": "VERIFIED",
+      "required_for_generation": false
+    },
+    "fire_location_rule": {
+      "value": "longitudinal_midpoint",
+      "unit": "rule",
+      "source": "用户指定火源固定在隧道纵向中部",
+      "status": "VERIFIED",
+      "required_for_generation": true
+    },
+    "fire_center_y_m": {
+      "value": null,
+      "unit": "m",
+      "source": "待断面与目标车道确定",
+      "status": "MISSING",
+      "required_for_generation": true
+    }
+  },
+  "fire_scenarios": [
+    {
+      "id": "F1",
+      "power_symbol": "Q1",
+      "label": "小型客车设计火灾",
+      "hrr_peak_mw": {"value": null, "unit": "MW", "source": "待车型构成与设计依据", "status": "MISSING", "required_for_generation": true},
+      "fuel_id": {"value": null, "unit": "FDS fuel name", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "heat_of_combustion_kj_kg": {"value": null, "unit": "kJ/kg", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "soot_yield_kg_kg": {"value": null, "unit": "kg/kg", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "co_yield_kg_kg": {"value": null, "unit": "kg/kg", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "hrr_ramp": {"value": null, "unit": "[{time_s,fraction}, ...]", "source": "待车型火灾增长曲线", "status": "MISSING", "required_for_generation": true},
+      "vehicle_obstruction_xb_m": {"value": null, "unit": "[x1,x2,y1,y2,z1,z2] m", "source": "待车辆尺寸与火源位置", "status": "MISSING", "required_for_generation": true},
+      "burner_xb_m": {"value": null, "unit": "[x1,x2,y1,y2,z1,z2] m", "source": "待火源面积与车辆尺寸", "status": "MISSING", "required_for_generation": true}
+    },
+    {
+      "id": "F2",
+      "power_symbol": "Q2",
+      "label": "客车或中型货车设计火灾",
+      "hrr_peak_mw": {"value": null, "unit": "MW", "source": "待车型构成与设计依据", "status": "MISSING", "required_for_generation": true},
+      "fuel_id": {"value": null, "unit": "FDS fuel name", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "heat_of_combustion_kj_kg": {"value": null, "unit": "kJ/kg", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "soot_yield_kg_kg": {"value": null, "unit": "kg/kg", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "co_yield_kg_kg": {"value": null, "unit": "kg/kg", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "hrr_ramp": {"value": null, "unit": "[{time_s,fraction}, ...]", "source": "待车型火灾增长曲线", "status": "MISSING", "required_for_generation": true},
+      "vehicle_obstruction_xb_m": {"value": null, "unit": "[x1,x2,y1,y2,z1,z2] m", "source": "待车辆尺寸与火源位置", "status": "MISSING", "required_for_generation": true},
+      "burner_xb_m": {"value": null, "unit": "[x1,x2,y1,y2,z1,z2] m", "source": "待火源面积与车辆尺寸", "status": "MISSING", "required_for_generation": true}
+    },
+    {
+      "id": "F3",
+      "power_symbol": "Q3",
+      "label": "普通重型货车设计火灾",
+      "hrr_peak_mw": {"value": null, "unit": "MW", "source": "待车型构成与设计依据", "status": "MISSING", "required_for_generation": true},
+      "fuel_id": {"value": null, "unit": "FDS fuel name", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "heat_of_combustion_kj_kg": {"value": null, "unit": "kJ/kg", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "soot_yield_kg_kg": {"value": null, "unit": "kg/kg", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "co_yield_kg_kg": {"value": null, "unit": "kg/kg", "source": "待火灾设计依据", "status": "MISSING", "required_for_generation": true},
+      "hrr_ramp": {"value": null, "unit": "[{time_s,fraction}, ...]", "source": "待车型火灾增长曲线", "status": "MISSING", "required_for_generation": true},
+      "vehicle_obstruction_xb_m": {"value": null, "unit": "[x1,x2,y1,y2,z1,z2] m", "source": "待车辆尺寸与火源位置", "status": "MISSING", "required_for_generation": true},
+      "burner_xb_m": {"value": null, "unit": "[x1,x2,y1,y2,z1,z2] m", "source": "待火源面积与车辆尺寸", "status": "MISSING", "required_for_generation": true}
+    }
+  ],
+  "ventilation": {
+    "screen_step_m_s": {"value": 0.25, "unit": "m/s", "source": "用户批准的两阶段选点规则", "status": "VERIFIED", "required_for_generation": false},
+    "transition_speeds_m_s": {"value": null, "unit": "{F1,F2,F3}: m/s", "source": "待理论计算和粗筛", "status": "MISSING", "required_for_generation": true},
+    "core_speeds_m_s": {"value": null, "unit": "[m/s,m/s,m/s,m/s,m/s]", "source": "由0.75*min(u*)至1.25*max(u*)生成", "status": "MISSING", "required_for_generation": true},
+    "fds_velocity_lines_template": {"value": null, "unit": "list of FDS lines with {speed_m_s}", "source": "待洞口边界和通风方案", "status": "MISSING", "required_for_generation": true}
+  },
+  "tenability": {
+    "breathing_height_m": {"value": 1.8, "unit": "m", "source": "用户批准的模型计划；待适用规范复核", "status": "ASSUMED", "required_for_generation": true},
+    "persistence_s": {"value": 10.0, "unit": "s", "source": "用户批准的模型计划", "status": "VERIFIED", "required_for_generation": true},
+    "temperature_limit_c": {"value": null, "unit": "degC", "source": "待中国现行适用规范条文", "status": "MISSING", "required_for_generation": true},
+    "visibility_limit_m": {"value": null, "unit": "m", "source": "待中国现行适用规范条文", "status": "MISSING", "required_for_generation": true},
+    "co_limit_ppm": {"value": null, "unit": "ppm", "source": "待中国现行适用规范条文与暴露时长", "status": "MISSING", "required_for_generation": true},
+    "smoke_layer_min_height_m": {"value": null, "unit": "m", "source": "待中国现行适用规范条文", "status": "MISSING", "required_for_generation": true},
+    "backlayer_visibility_threshold_m": {"value": null, "unit": "m", "source": "待回流前锋方法依据", "status": "MISSING", "required_for_generation": true},
+    "ceiling_probe_offset_m": {"value": null, "unit": "m", "source": "待真实断面与网格", "status": "MISSING", "required_for_generation": true},
+    "minimum_margin_s": {"value": 60.0, "unit": "s", "source": "用户锁定的安全储备", "status": "VERIFIED", "required_for_generation": true},
+    "minimum_aset_rset_ratio": {"value": 1.5, "unit": "ratio", "source": "用户锁定的安全储备", "status": "VERIFIED", "required_for_generation": true}
+  },
+  "evacuation": {
+    "scenario_name": {"value": "可信不利排队", "unit": "label", "source": "用户锁定的人员情景", "status": "VERIFIED", "required_for_generation": false},
+    "runs_per_case": {"value": 30, "unit": "runs", "source": "用户批准的模型计划", "status": "VERIFIED", "required_for_generation": false},
+    "vehicle_mix": {"value": null, "unit": "fractions", "source": "待运营交通数据", "status": "MISSING", "required_for_generation": false},
+    "queue_spacing_m": {"value": null, "unit": "m", "source": "待运营或不利情景依据", "status": "MISSING", "required_for_generation": false},
+    "occupancy_per_vehicle": {"value": null, "unit": "persons/vehicle", "source": "待交通调查", "status": "MISSING", "required_for_generation": false},
+    "detection_s": {"value": null, "unit": "s", "source": "待报警系统资料", "status": "MISSING", "required_for_generation": false},
+    "notification_s": {"value": null, "unit": "s", "source": "待报警系统资料", "status": "MISSING", "required_for_generation": false},
+    "pre_movement_distribution": {"value": null, "unit": "distribution", "source": "待演练或文献依据", "status": "MISSING", "required_for_generation": false}
+  },
+  "simulation": {
+    "prefire_duration_s": {"value": null, "unit": "s", "source": "待通风稳态检查方案", "status": "MISSING", "required_for_generation": true},
+    "post_ignition_duration_s": {"value": null, "unit": "s", "source": "待RSET上界和右删失策略", "status": "MISSING", "required_for_generation": true},
+    "ambient_temperature_c": {"value": null, "unit": "degC", "source": "待洞内实测或设计值", "status": "MISSING", "required_for_generation": true},
+    "mesh_blocks": {"value": null, "unit": "list of FDS &MESH lines", "source": "待真实断面与网格独立性设计", "status": "MISSING", "required_for_generation": true},
+    "geometry_blocks": {"value": null, "unit": "list of FDS geometry lines", "source": "待真实几何建模", "status": "MISSING", "required_for_generation": true},
+    "boundary_blocks": {"value": null, "unit": "list of FDS boundary lines", "source": "待洞口与安全洞边界设计", "status": "MISSING", "required_for_generation": true},
+    "device_blocks": {"value": null, "unit": "list of FDS output/device lines", "source": "待横通道坐标和断面", "status": "MISSING", "required_for_generation": true}
+  }
+}
